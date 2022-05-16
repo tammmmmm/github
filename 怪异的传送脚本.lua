@@ -1,4 +1,4 @@
-local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E6%B2%83%E5%88%A9%E5%9B%BE%E4%B9%A6%E9%A6%86.lua"))()
+local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/wallylib.lua"))()
 local mainUI = ui:Init(game:GetService("CoreGui"))
 local soapTab = mainUI:AddTab("Tam's Teleports")
 --the mf teleport function.
