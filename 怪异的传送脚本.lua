@@ -1,20 +1,55 @@
 local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E6%B2%83%E5%88%A9%E5%9B%BE%E4%B9%A6%E9%A6%86.lua"))()
 local mainUI = ui:Init(game:GetService("CoreGui"))
 local soapTab = mainUI:AddTab("Tam's Teleports")
-local teleportpart = soapTab:AddSection("Teleports")
 
+--teleport function
+--Callie if you're reading this, perish
+function goto(v1,v2,v3)
+    local plr = game.Players.LocalPlayer
+    local chara = plr.Character
+    if chara:FindFirstChildOfClass("Humanoid") then chara:FindFirstChildOfClass("Humanoid"):ChangeState(15) end
+    chara:ClearAllChildren()
+    local newChar = Instance.new("Model")
+    newChar.Parent = workspace
+    plr.Character = newChar
+    wait()
+    plr.Character = chara
+    newChar:Destroy()
+    wait(0.8)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v1,v2,v3)
+    end
+
+--Teleports Dropdown
+local teleportpart = soapTab:AddSection("Teleports")
+--le epic teleports
 local Armory = teleportpart:AddButton("Armory", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E4%B8%BB%E4%BC%A0%E9%80%81.lua"))()
-end)
-local Criminal = teleportpart:AddButton("Crim Base", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E7%8C%A9%E7%BA%A2%E4%BC%A0%E9%80%81.lua"))()
+    goto(885, -135, 50)
 end)
 local Caf = teleportpart:AddButton("Cafeteria Knife", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E5%8E%A8%E6%88%BF.lua"))()
+    goto(948, -130, 15)
 end)
 local Yard = teleportpart:AddButton("Yard Knife", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E9%99%A2%E5%AD%90%E5%88%80.lua"))()
+    goto(772, -140, 305)
 end)
 local Lobby = teleportpart:AddButton("Lobby", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E5%A4%A7%E5%A0%82.lua"))()
+    goto(979.7, -140, 200)
 end)
+local hideout = teleportpart:AddButton("Prison Roof", function()
+    goto(985, -107, 31)
+end)
+local tree = teleportpart:AddButton("Tree Near Wall", function()
+    goto(550, -140, 140)
+end)
+local Criminal = teleportpart:AddButton("Crim Base", function()
+    goto(-850, -143, -150)
+end)
+local armor = teleportpart:AddButton("Crim Armory", function()
+    goto(466, -227, -1067)
+end)
+local bank = teleportpart:AddButton("Bank", function()
+    goto(-320, -185, -250)
+end)
+local hideout = teleportpart:AddButton("Hideout", function()
+    goto(65, -228, -913)
+end)
+
