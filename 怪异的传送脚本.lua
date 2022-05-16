@@ -2,7 +2,7 @@ local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/g
 local mainUI = ui:Init(game:GetService("CoreGui"))
 local soapTab = mainUI:AddTab("Tam's Teleports")
 --the mf teleport function.
--- die.
+--die.
 function goto(v1,v2,v3)
     local plr = game.Players.LocalPlayer
     local chara = plr.Character
