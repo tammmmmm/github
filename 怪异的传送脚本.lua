@@ -1,9 +1,8 @@
 local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/%E6%B2%83%E5%88%A9%E5%9B%BE%E4%B9%A6%E9%A6%86.lua"))()
 local mainUI = ui:Init(game:GetService("CoreGui"))
 local soapTab = mainUI:AddTab("Tam's Teleports")
-
---teleport function
---Callie if you're reading this, perish
+--the mf teleport function.
+-- die.
 function goto(v1,v2,v3)
     local plr = game.Players.LocalPlayer
     local chara = plr.Character
@@ -21,7 +20,7 @@ function goto(v1,v2,v3)
 
 --Teleports Dropdown
 local teleportpart = soapTab:AddSection("Teleports")
---le epic teleports
+
 local Armory = teleportpart:AddButton("Armory", function()
     goto(885, -135, 50)
 end)
@@ -52,4 +51,8 @@ end)
 local hideout = teleportpart:AddButton("Hideout", function()
     goto(65, -228, -913)
 end)
-
+--Misc Dropdown
+local miscpart = soapTab:AddSection("Misc")
+local hideout = miscpart:AddButton("Reset While Tazed", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
