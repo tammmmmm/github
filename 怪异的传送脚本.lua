@@ -15,7 +15,7 @@ local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "TamWare Loaded";
 	Text = "Why did I recode this script";
-	Icon = "http://www.roblox.com/asset/?id=9667351287";
+	Icon = "http://www.roblox.com/asset/?id=9671571676";
 	Duration = 7;
 })
 game:GetService("StarterGui"):SetCore("SendNotification",{
