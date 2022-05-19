@@ -1,8 +1,43 @@
-local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/github/main/wallylib.lua"))()
-local mainUI = ui:Init(game:GetService("CoreGui"))
-local soapTab = mainUI:AddTab("Tam's Teleports")
---the mf teleport function.
---die.
+local timetime = math.random(0,0.4)
+wait(timetime)
+-- menu key
+local Config = {
+    WindowName = "TamWare - Prison Life: Remastered",
+	-- menu color
+	Color = Color3.fromRGB(83,158,190),
+    -- menu keybind
+	Keybind = Enum.KeyCode.RightShift
+}
+-- ui lib loadstring
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/0/main/%E6%89%98%E6%9E%B6.lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+--thing
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "TamWare loaded";
+	Text = "Why did I revamp this script";
+	Icon = "9667351296";
+	Duration = 7;
+})
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Right Shift To Toggle UI";
+	Text = "Like you didn't already know";
+	Button1 = "ok"
+})
+
+---tabs--------------------------------------
+---------------------------------------------
+local Tab1 = Window:CreateTab("Main")
+local Tab2 = Window:CreateTab("Settings")
+---------------------------------------------
+local Section1 = Tab1:CreateSection("Teleports")
+local Section2 = Tab1:CreateSection("Tools")
+local Section3 = Tab2:CreateSection("Menu")
+local Section4 = Tab2:CreateSection("Credits")
+---------------------------------------------
+local StarterGui = game:GetService("StarterGui")
+local bindable = Instance.new("BindableFunction")
+
+--tp function
 function goto(v1,v2,v3)
     local plr = game.Players.LocalPlayer
     local chara = plr.Character
@@ -16,43 +51,131 @@ function goto(v1,v2,v3)
     newChar:Destroy()
     wait(0.8)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v1,v2,v3)
-    end
+end
 
---Teleports Dropdown
-local teleportpart = soapTab:AddSection("Teleports")
-
-local Armory = teleportpart:AddButton("Armory", function()
-    goto(885, -135, 50)
+-- teleport ----------------------------------------------------------------------------------------------------------
+local Button1 = Section1:CreateButton("Armory", function()
+	goto(885, -135, 50)
 end)
-local Caf = teleportpart:AddButton("Cafeteria Knife", function()
-    goto(948, -130, 15)
+local Button2 = Section1:CreateButton("Cafeteria Knife", function()
+	goto(948, -130, 15)
 end)
-local Yard = teleportpart:AddButton("Yard Knife", function()
+local Button3 = Section1:CreateButton("Yard Knife", function()
     goto(772, -140, 305)
 end)
-local Lobby = teleportpart:AddButton("Lobby", function()
+local Button4 = Section1:CreateButton("Bench Crowbar", function()
+    goto(835, -141, 320)
+end)
+local Button5 = Section1:CreateButton("Door Crowbar", function()
+    goto(810, -142, 193)
+end)
+local Button19 = Section1:CreateButton("Yard Tower", function()
+    goto(886, -109, 383)
+end)
+local Button6 = Section1:CreateButton("Lobby", function()
     goto(979.7, -140, 200)
 end)
-local hideout = teleportpart:AddButton("Prison Roof", function()
+local Button7 = Section1:CreateButton("Prison Roof", function()
     goto(985, -107, 31)
 end)
-local tree = teleportpart:AddButton("Tree Near Wall", function()
+local Button8 = Section1:CreateButton("Tree Near Wall", function()
     goto(550, -140, 140)
 end)
-local Criminal = teleportpart:AddButton("Crim Base", function()
+local Button19 = Section1:CreateButton("Main Gate Ladder", function()
+    goto(583, -141, 100)
+end)
+local Button9 = Section1:CreateButton("Criminal Base", function()
     goto(-850, -143, -150)
 end)
-local armor = teleportpart:AddButton("Crim Armory", function()
+local Button10 = Section1:CreateButton("Criminal Armory", function()
     goto(466, -227, -1067)
 end)
-local bank = teleportpart:AddButton("Bank", function()
-    goto(-320, -185, -250)
-end)
-local hideout = teleportpart:AddButton("Hideout", function()
+local Button11 = Section1:CreateButton("Criminal Hideout", function()
     goto(65, -228, -913)
 end)
---Misc Dropdown
-local miscpart = soapTab:AddSection("Misc")
-local hideout = miscpart:AddButton("Reset While Tazed", function()
-    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+local Button12 = Section1:CreateButton("Jewelry Store", function()
+    goto(-247, -185, -125)
 end)
+local Button13 = Section1:CreateButton("Bank", function()
+    goto(-320, -185, -250)
+end)
+local Button18 = Section1:CreateButton("Casino", function()
+    goto(-372, -185, -478)
+end)
+
+
+local Button14 = Section2:CreateButton("Reset While Ragdolled", function()
+	game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+Button14:AddToolTip("Allows you to reset while tazed\nor ragdolled to not get arrested")
+local Label2 = Section2:CreateLabel("Don't spam these, you might crash")
+
+local Button16 = Section2:CreateButton("Disable Fall Damage", function()
+    local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+    local scriptPath = game:GetService("Players").LocalPlayer.PlayerGui.StatusUI.Main
+    local closureName = "Unnamed function"
+    local upvalueIndex = 1
+    local closureConstants = {
+        [1] = "KeyCode",
+        [2] = "InteractionMenuKey",
+        [3] = "MouseIconEnabled",
+        [4] = false,
+        [5] = "Icon",
+        [6] = "Visible"
+    }
+    local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
+    local value = false
+    local elementIndex = "EnableFallDamage"
+    debug.getupvalue(closure, upvalueIndex)[elementIndex] = value
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Fall Damage Disabled";
+		Text = "Go crazy";
+		Duration = 5;
+	})
+end)
+Button16:AddToolTip("Prevents you from being tazed\n and ragdolling when falling")
+
+local Button17 = Section2:CreateButton("Enable Fall Damage", function()
+    local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+    local scriptPath = game:GetService("Players").LocalPlayer.PlayerGui.StatusUI.Main
+    local closureName = "Unnamed function"
+    local upvalueIndex = 1
+    local closureConstants = {
+        [1] = "KeyCode",
+        [2] = "InteractionMenuKey",
+        [3] = "MouseIconEnabled",
+        [4] = true,
+        [5] = "Icon",
+        [6] = "Visible"
+    }
+    local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
+    local value = true
+    local elementIndex = "EnableFallDamage"
+    debug.getupvalue(closure, upvalueIndex)[elementIndex] = value
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Fall Damage Enabled";
+		Text = "Did an admin join or something?";
+		Duration = 5;
+	})
+end)
+Button17:AddToolTip("Why would you renable ragdolling\n after disabling it lol")
+
+-- settings tab ----------------------------------------------------------------------------------------------------------
+local Toggle3 = Section3:CreateToggle("Menu Key", nil, function(State)
+	Window:Toggle(State)
+end)
+Toggle3:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
+	Config.Keybind = Enum.KeyCode[Key]
+end)
+Toggle3:SetState(true)
+
+local Colorpicker3 = Section3:CreateColorpicker("UI Color", function(Color)
+	Window:ChangeColor(Color)
+end)
+Colorpicker3:UpdateColor(Config.Color)
+--credits
+local Label3 = Section4:CreateLabel("TamWare was supported by\n\n$oap - Teleporting Stuff\n goo - Trying to help me\n AlexR32 - Bracket v3 UI Lib")
+
+--menu settings
+Window:SetBackground("9657202096")
+Window:SetTileScale(0.1)
