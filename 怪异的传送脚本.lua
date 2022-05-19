@@ -15,7 +15,6 @@ local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "TamWare loaded";
 	Text = "Why did I revamp this script";
-	Icon = "9667351296";
 	Duration = 7;
 })
 game:GetService("StarterGui"):SetCore("SendNotification",{
