@@ -2,7 +2,7 @@ local timetime = math.random(0,0.4)
 wait(timetime)
 -- menu key
 local Config = {
-    WindowName = "TamWare - Prison Life: Remastered",
+    WindowName = "TamHook - Prison Life: Remastered",
 	-- menu color
 	Color = Color3.fromRGB(83,158,190),
     -- menu keybind
@@ -13,7 +13,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammm
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 --thing
 game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "TamWare Loaded";
+	Title = "TamHook Loaded";
 	Text = "Why did I recode this script";
 	Icon = "http://www.roblox.com/asset/?id=9671571664";
 	Duration = 7;
