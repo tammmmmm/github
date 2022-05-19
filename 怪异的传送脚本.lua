@@ -107,7 +107,7 @@ local Button14 = Section2:CreateButton("Reset While Ragdolled", function()
 	game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
 Button14:AddToolTip("Allows you to reset while tazed\nor ragdolled to not get arrested")
-local Label2 = Section2:CreateLabel("Don't spam these, you might crash")
+local Label2 = Section2:CreateLabel("Don't spam this, you might crash")
 
 local Button16 = Section2:CreateButton("Disable Fall Damage", function()
     local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
@@ -133,7 +133,7 @@ local Button16 = Section2:CreateButton("Disable Fall Damage", function()
 	})
 end)
 Button16:AddToolTip("Prevents you from being tazed\n and ragdolling when falling")
-
+--[[
 local Button17 = Section2:CreateButton("Enable Fall Damage", function()
     local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
     local scriptPath = game:GetService("Players").LocalPlayer.PlayerGui.StatusUI.Main
@@ -158,7 +158,7 @@ local Button17 = Section2:CreateButton("Enable Fall Damage", function()
 	})
 end)
 Button17:AddToolTip("Why would you renable ragdolling\n after disabling it lol")
-
+]]
 -- settings tab ----------------------------------------------------------------------------------------------------------
 local Toggle3 = Section3:CreateToggle("Menu Key", nil, function(State)
 	Window:Toggle(State)
