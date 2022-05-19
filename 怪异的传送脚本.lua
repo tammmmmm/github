@@ -84,6 +84,10 @@ end)
 local Button19 = Section1:CreateButton("Main Gate Ladder", function()
     goto(583, -141, 100)
 end)
+local Button20 = Section1:CreateButton("Scaffolding Escape", function()
+    goto(991, -114, -137)
+end)
+Button20:AddToolTip("An easy way to escape\nI guess")
 local Button9 = Section1:CreateButton("Criminal Base", function()
     goto(-850, -143, -150)
 end)
@@ -134,32 +138,6 @@ local Button16 = Section2:CreateButton("Disable Fall Damage", function()
 	})
 end)
 Button16:AddToolTip("Prevents you from being tazed\n and ragdolling when falling")
---[[
-local Button17 = Section2:CreateButton("Enable Fall Damage", function()
-    local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
-    local scriptPath = game:GetService("Players").LocalPlayer.PlayerGui.StatusUI.Main
-    local closureName = "Unnamed function"
-    local upvalueIndex = 1
-    local closureConstants = {
-        [1] = "KeyCode",
-        [2] = "InteractionMenuKey",
-        [3] = "MouseIconEnabled",
-        [4] = true,
-        [5] = "Icon",
-        [6] = "Visible"
-    }
-    local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
-    local value = true
-    local elementIndex = "EnableFallDamage"
-    debug.getupvalue(closure, upvalueIndex)[elementIndex] = value
-	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "Fall Damage Enabled";
-		Text = "Did an admin join or something?";
-		Duration = 5;
-	})
-end)
-Button17:AddToolTip("Why would you renable ragdolling\n after disabling it lol")
-]]
 -- settings tab ----------------------------------------------------------------------------------------------------------
 local Toggle3 = Section3:CreateToggle("Menu Key", nil, function(State)
 	Window:Toggle(State)
@@ -174,7 +152,36 @@ local Colorpicker3 = Section3:CreateColorpicker("UI Color", function(Color)
 end)
 Colorpicker3:UpdateColor(Config.Color)
 --credits
-local Label3 = Section4:CreateLabel("TamWare was supported by\n\n$oap - Teleporting Stuff\n goo - Trying to help me\n AlexR32 - Bracket v3 UI Lib")
+local Label3 = Section4:CreateLabel("TamHook - By Tam\n\n$oap - Teleporting Stuff\n Goo - Trying to help me\n AlexR32 - Bracket v3 UI Lib\nq0ma - Cripware aimbot")
+
+local Button21 = Section3:CreateButton("V3rmillion Thread", function()
+    syn.write_clipboard("https://v3rmillion.net/showthread.php?tid=1169429")
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Copied To Clipboard";
+        Text = "Go read the awsome thread";
+        Icon = "http://www.roblox.com/asset/?id=9671571664";
+        Duration = 7;
+    })
+end)
+local Label4 = Section2:CreateLabel("Cripware Aimbot")
+
+local Button22 = Section2:CreateButton("Load Cripware", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/cripware-refresh/main/cripware.lua"))()
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Cripware Loaded";
+        Text = "Thanks q0ma";
+        Icon = "http://www.roblox.com/asset/?id=7300477598";
+        Duration = 8;
+    })
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Keybind Is End";
+        Text = "you probably already knew";
+        Duration = 10;
+        Button1 = "Ok"
+    })
+end)
+Button22:AddToolTip("Why would you do this\nKeybind is end")
+
 
 --menu settings
 Window:SetBackground("9657202096")
