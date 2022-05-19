@@ -13,8 +13,9 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammm
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 --thing
 game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "TamWare loaded";
-	Text = "Why did I revamp this script";
+	Title = "TamWare Loaded";
+	Text = "Why did I recode this script";
+	Icon = "http://www.roblox.com/asset/?id=9667351287";
 	Duration = 7;
 })
 game:GetService("StarterGui"):SetCore("SendNotification",{
