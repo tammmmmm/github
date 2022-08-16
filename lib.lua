@@ -42,7 +42,8 @@ local function draggable(obj)
 	uis.InputChanged:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseMovement and globals.dragging then
 			local change = input.Position - globals.morigin
-			obj.Position = UDim2.new(globals.uiorigin.X.Scale,globals.uiorigin.X.Offset+change.X,globals.uiorigin.Y.Scale,globals.uiorigin.Y.Offset+change.Y)
+			obj.Position = UDim2.new(globals.uiorigin.X.Scale,globals.uiorigin.X.
+					set+change.X,globals.uiorigin.Y.Scale,globals.uiorigin.Y.Offset+change.Y)
 		end
 	end)
 end
@@ -196,9 +197,9 @@ function library:MakeToggle(tab,text,default,callback)
 	buttoncount[tonumber(tab.Name)] = buttoncount[tonumber(tab.Name)]+1
 	local discordid326801946230915102bestslave
 	if default then
-		discordid326801946230915102bestslave = {"ON",Color3.new(0, 1, 0)}
+		discordid326801946230915102bestslave = {":)",Color3.new(0, 1, 0)}
 	else
-		discordid326801946230915102bestslave = {"OFF",Color3.new(1, 0, 0)}
+		discordid326801946230915102bestslave = {"Yes",Color3.new(1, 0, 0)}
 	end
 	local button = self:Create("TextButton", {
 		Parent = tab.ButtonHolder.ButtonHolder.Frame,
