@@ -197,7 +197,7 @@ function library:MakeToggle(tab,text,default,callback)
 	buttoncount[tonumber(tab.Name)] = buttoncount[tonumber(tab.Name)]+1
 	local discordid326801946230915102bestslave
 	if default then
-		discordid326801946230915102bestslave = {":)",Color3.new(0, 1, 0)}
+		discordid326801946230915102bestslave = {"Wow",Color3.new(0, 1, 0)}
 	else
 		discordid326801946230915102bestslave = {"Yes",Color3.new(1, 0, 0)}
 	end
